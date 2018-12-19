@@ -1,0 +1,446 @@
+{
+    "TestDual_Die_Cura360.gcode": {
+        "statistics": {
+            "averagePrintTime": {
+                "_default": 4081.826460123062
+            },
+            "lastPrintTime": {
+                "_default": 4081.826460123062
+            }
+        },
+        "hash": "ef17ac2650869d0adbcf3cf120f21b337c216237",
+        "analysis": {
+            "estimatedPrintTime": 2578.6571546615965,
+            "printingArea": {
+                "maxZ": 20.2,
+                "maxX": 80.589,
+                "maxY": 195.587,
+                "minX": 39.261,
+                "minY": 90.257,
+                "minZ": 0.2
+            },
+            "dimensions": {
+                "width": 41.327999999999996,
+                "depth": 105.32999999999998,
+                "height": 20.0
+            },
+            "filament": {
+                "tool1": {
+                    "volume": 0.0,
+                    "length": 862.6053500000189
+                },
+                "tool0": {
+                    "volume": 0.0,
+                    "length": 1866.616720000028
+                }
+            }
+        },
+        "history": [
+            {
+                "timestamp": 1545066458.361918,
+                "printTime": 4081.826460123062,
+                "printerProfile": "_default",
+                "success": true
+            }
+        ]
+    },
+    "TestDual_02_Cura360.gcode": {
+        "hash": "cb7a50b01d7e40aab4995cf5d27583a4d8aa66d8",
+        "analysis": {
+            "estimatedPrintTime": 2616.421203704005,
+            "printingArea": {
+                "maxZ": 20.2,
+                "maxX": 80.186,
+                "maxY": 195.186,
+                "minX": 38.809,
+                "minY": 89.809,
+                "minZ": 0.2
+            },
+            "dimensions": {
+                "width": 41.37700000000001,
+                "depth": 105.37700000000001,
+                "height": 20.0
+            },
+            "filament": {
+                "tool1": {
+                    "volume": 0.0,
+                    "length": 1521.028470000012
+                },
+                "tool0": {
+                    "volume": 0.0,
+                    "length": 1324.3775100000455
+                }
+            }
+        }
+    },
+    "TestDual_Die_I_Cura360.gcode": {
+        "statistics": {
+            "averagePrintTime": {
+                "_default": 3988.4415941238403
+            },
+            "lastPrintTime": {
+                "_default": 3988.4415941238403
+            }
+        },
+        "hash": "3e4362974f73399451a5619a7b84b09be457969c",
+        "analysis": {
+            "estimatedPrintTime": 2578.483002555298,
+            "printingArea": {
+                "maxZ": 20.2,
+                "maxX": 80.589,
+                "maxY": 195.587,
+                "minX": 39.261,
+                "minY": 90.257,
+                "minZ": 0.2
+            },
+            "dimensions": {
+                "width": 41.327999999999996,
+                "depth": 105.32999999999998,
+                "height": 20.0
+            },
+            "filament": {
+                "tool1": {
+                    "volume": 0.0,
+                    "length": 1614.6065300000046
+                },
+                "tool0": {
+                    "volume": 0.0,
+                    "length": 1114.7019600000501
+                }
+            }
+        },
+        "history": [
+            {
+                "timestamp": 1545070670.516427,
+                "printTime": 3988.4415941238403,
+                "printerProfile": "_default",
+                "success": true
+            }
+        ]
+    },
+    "CFFFP_die.gcode": {
+        "statistics": {
+            "averagePrintTime": {
+                "_default": 1887.850333929062
+            },
+            "lastPrintTime": {
+                "_default": 1887.850333929062
+            }
+        },
+        "hash": "dee54ea7e3e79413c544b49d86ef37c9f02aeb02",
+        "analysis": {
+            "estimatedPrintTime": 1170.7262160601838,
+            "printingArea": {
+                "maxZ": 16.04,
+                "maxX": 66.413,
+                "maxY": 117.422,
+                "minX": 41.581,
+                "minY": 92.582,
+                "minZ": 0.2
+            },
+            "dimensions": {
+                "width": 24.831999999999994,
+                "depth": 24.840000000000003,
+                "height": 15.84
+            },
+            "filament": {
+                "tool1": {
+                    "volume": 0.0,
+                    "length": 30.0
+                },
+                "tool0": {
+                    "volume": 0.0,
+                    "length": 865.6403799999999
+                }
+            }
+        },
+        "history": [
+            {
+                "timestamp": 1545077928.883232,
+                "printerProfile": "_default",
+                "success": false
+            },
+            {
+                "timestamp": 1545079121.232822,
+                "printerProfile": "_default",
+                "success": false
+            },
+            {
+                "timestamp": 1545081618.706269,
+                "printTime": 1887.850333929062,
+                "printerProfile": "_default",
+                "success": true
+            }
+        ]
+    },
+    "016_MPE_calibration_cube_2.gcode": {
+        "hash": "bde6098062ad18f71f80f405c8d14c96ecc850c2",
+        "analysis": {
+            "estimatedPrintTime": 3567.9707837868127,
+            "printingArea": {
+                "maxZ": 25.12,
+                "maxX": 95.589,
+                "maxY": 180.589,
+                "minX": 36.4,
+                "minY": 86.875,
+                "minZ": 0.16
+            },
+            "dimensions": {
+                "width": 59.189,
+                "depth": 93.714,
+                "height": 24.96
+            },
+            "filament": {
+                "tool1": {
+                    "volume": 0.0,
+                    "length": 1770.2868499999581
+                },
+                "tool0": {
+                    "volume": 0.0,
+                    "length": 1608.4145600000397
+                }
+            }
+        }
+    },
+    "016_MPE_calibration_cube_1.gcode": {
+        "hash": "1f59f34c9b1e8e542861fe7d373f9ab1b70a0de3",
+        "analysis": {
+            "estimatedPrintTime": 4833.385452294463,
+            "printingArea": {
+                "maxZ": 25.12,
+                "maxX": 95.589,
+                "maxY": 180.589,
+                "minX": 36.409,
+                "minY": 86.909,
+                "minZ": 0.16
+            },
+            "dimensions": {
+                "width": 59.18,
+                "depth": 93.67999999999999,
+                "height": 24.96
+            },
+            "filament": {
+                "tool1": {
+                    "volume": 0.0,
+                    "length": 1426.9567200000745
+                },
+                "tool0": {
+                    "volume": 0.0,
+                    "length": 2727.3262700000023
+                }
+            }
+        }
+    },
+    "E1_xyzCalibration_cube.gcode": {
+        "hash": "196ef9aff14bc60e60c5a769f2119f73119a105a",
+        "analysis": {
+            "estimatedPrintTime": 1411.2497125723125,
+            "printingArea": {
+                "maxZ": 20.0,
+                "maxX": 95.589,
+                "maxY": 180.589,
+                "minX": 38.909,
+                "minY": 89.409,
+                "minZ": 0.16
+            },
+            "dimensions": {
+                "width": 56.68,
+                "depth": 91.17999999999999,
+                "height": 19.84
+            },
+            "filament": {
+                "tool1": {
+                    "volume": 0.0,
+                    "length": 1359.67115
+                },
+                "tool0": {
+                    "volume": 0.0,
+                    "length": 34.95223000000001
+                }
+            }
+        }
+    },
+    "TestDual_Die_I_012_024.gcode": {
+        "statistics": {
+            "averagePrintTime": {
+                "_default": 6208.572011947632
+            },
+            "lastPrintTime": {
+                "_default": 6208.572011947632
+            }
+        },
+        "hash": "8f53394699b5cfeeaf7e19a1dd5c21e43a6d0e04",
+        "analysis": {
+            "estimatedPrintTime": 4112.022564944948,
+            "printingArea": {
+                "maxZ": 20.12,
+                "maxX": 80.589,
+                "maxY": 195.587,
+                "minX": 39.261,
+                "minY": 90.257,
+                "minZ": 0.2
+            },
+            "dimensions": {
+                "width": 41.327999999999996,
+                "depth": 105.32999999999998,
+                "height": 19.92
+            },
+            "filament": {
+                "tool1": {
+                    "volume": 0.0,
+                    "length": 1662.2437900000398
+                },
+                "tool0": {
+                    "volume": 0.0,
+                    "length": 1284.8863400000505
+                }
+            }
+        },
+        "history": [
+            {
+                "timestamp": 1545053159.2757,
+                "printerProfile": "_default",
+                "success": false
+            },
+            {
+                "timestamp": 1545053358.913844,
+                "printerProfile": "_default",
+                "success": false
+            },
+            {
+                "timestamp": 1545054297.701911,
+                "printerProfile": "_default",
+                "success": false
+            },
+            {
+                "timestamp": 1545060873.450365,
+                "printTime": 6208.572011947632,
+                "printerProfile": "_default",
+                "success": true
+            }
+        ]
+    },
+    "E0_xyzCalibration_cube.gcode": {
+        "hash": "69fc3de5b41962075ed6d76b4082210ef29239c2",
+        "analysis": {
+            "estimatedPrintTime": 1089.1906103072329,
+            "printingArea": {
+                "maxZ": 20.0,
+                "maxX": 69.291,
+                "maxY": 119.791,
+                "minX": 39.709,
+                "minY": 90.209,
+                "minZ": 0.16
+            },
+            "dimensions": {
+                "width": 29.581999999999994,
+                "depth": 29.581999999999994,
+                "height": 19.84
+            },
+            "filament": {
+                "tool0": {
+                    "volume": 0.0,
+                    "length": 1135.8003200000003
+                }
+            }
+        }
+    },
+    "TestDual_01_Cura360.gcode": {
+        "hash": "187bc6c645682a965d98acbf6bcade09e771dc10",
+        "analysis": {
+            "estimatedPrintTime": 2661.33519431349,
+            "printingArea": {
+                "maxZ": 20.2,
+                "maxX": 80.186,
+                "maxY": 195.186,
+                "minX": 38.809,
+                "minY": 89.809,
+                "minZ": 0.2
+            },
+            "dimensions": {
+                "width": 41.37700000000001,
+                "depth": 105.37700000000001,
+                "height": 20.0
+            },
+            "filament": {
+                "tool1": {
+                    "volume": 0.0,
+                    "length": 1074.7398400000166
+                },
+                "tool0": {
+                    "volume": 0.0,
+                    "length": 1679.853310000042
+                }
+            }
+        }
+    },
+    "CFFFP_die_I.gcode": {
+        "statistics": {
+            "averagePrintTime": {},
+            "lastPrintTime": {}
+        },
+        "hash": "2fe278e2e0f2163e1c4f1abdc5c237c521e73386",
+        "analysis": {
+            "estimatedPrintTime": 1250.3261687336762,
+            "printingArea": {
+                "maxZ": 16.04,
+                "maxX": 80.589,
+                "maxY": 195.587,
+                "minX": 40.784,
+                "minY": 91.785,
+                "minZ": 0.2
+            },
+            "dimensions": {
+                "width": 39.805,
+                "depth": 103.80199999999999,
+                "height": 15.84
+            },
+            "filament": {
+                "tool1": {
+                    "volume": 0.0,
+                    "length": 872.93791
+                },
+                "tool0": {
+                    "volume": 0.0,
+                    "length": 95.07571000000014
+                }
+            }
+        },
+        "history": [
+            {
+                "timestamp": 1545077439.337418,
+                "printerProfile": "_default",
+                "success": false
+            }
+        ]
+    },
+    "New_MPE_TEST_Color2.gcode": {
+        "hash": "3b400714e81e8d8c789c23a7da18b40f6b82955f",
+        "analysis": {
+            "estimatedPrintTime": 366.6089915796377,
+            "printingArea": {
+                "maxZ": 4.16,
+                "maxX": 95.589,
+                "maxY": 180.589,
+                "minX": 42.909,
+                "minY": 102.409,
+                "minZ": 0.16
+            },
+            "dimensions": {
+                "width": 52.68,
+                "depth": 78.17999999999999,
+                "height": 4.0
+            },
+            "filament": {
+                "tool1": {
+                    "volume": 0.0,
+                    "length": 168.73284000000064
+                },
+                "tool0": {
+                    "volume": 0.0,
+                    "length": 195.7999700000013
+                }
+            }
+        }
+    }
+}
