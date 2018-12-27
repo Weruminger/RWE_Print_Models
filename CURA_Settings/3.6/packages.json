@@ -1,0 +1,71 @@
+{
+    "installed": {
+        "CuraDrive": {
+            "filename": "C:\\Users\\install\\AppData\\Local\\cura\\3.6\\cache\\cura_packages\\CuraDrive.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "Ultimaker packages",
+                    "display_name": "Ultimaker",
+                    "email": "plugins@ultimaker.com",
+                    "website": "https://www.ultimaker.com"
+                },
+                "description": "Backup and restore your configuration.",
+                "display_name": "Cura Backups",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "CuraDrive",
+                "package_type": "plugin",
+                "package_version": "1.1.0",
+                "sdk_version": 5,
+                "website": "https://ultimaker.com"
+            }
+        },
+        "OctoPrintPlugin": {
+            "filename": "C:\\Users\\install\\AppData\\Local\\cura\\3.6\\cache\\cura_packages\\OctoPrintPlugin.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "fieldofview",
+                    "display_name": "fieldOfView",
+                    "email": "aldo@fieldofview.com",
+                    "website": "http://fieldofview.com"
+                },
+                "description": "Enables networked printing and monitoring with OctoPrint.",
+                "display_name": "OctoPrint Connection",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "OctoPrintPlugin",
+                "package_type": "plugin",
+                "package_version": "3.5.3",
+                "sdk_version": 5,
+                "sdk_version_semver": "5.0.0",
+                "website": "https://github.com/fieldOfView/OctoPrintPlugin"
+            }
+        },
+        "ZOffsetPlugin": {
+            "filename": "C:\\Users\\install\\AppData\\Local\\cura\\3.5\\cache\\cura_packages\\ZOffsetPlugin.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "fieldofview",
+                    "display_name": "fieldOfView",
+                    "email": "aldo@fieldofview.com",
+                    "website": "http://fieldofview.com"
+                },
+                "description": "Adds a Z Offset setting to change the distance between the nozzle and the buildplate.",
+                "display_name": "Z Offset Setting",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "ZOffsetPlugin",
+                "package_type": "plugin",
+                "package_version": "3.5.0",
+                "sdk_version": 5,
+                "website": "https://github.com/fieldOfView/ZOffsetPlugin"
+            }
+        }
+    },
+    "to_install": {},
+    "to_remove": [],
+    "version": 1
+}
