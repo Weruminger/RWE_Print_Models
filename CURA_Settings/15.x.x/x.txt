@@ -1,0 +1,25 @@
+Recv:   G21    ; Units in mm (mm)
+Recv:   M149 C ; Units in Celsius
+Recv: 
+Recv:   M200 D1.75
+Recv:   M200 D0
+Recv:   M92 X200.00 Y200.00 Z810.00 E1630.00
+Recv:   M203 X300.00 Y300.00 Z10.00 E25.00
+Recv:   M201 X500.00 Y500.00 Z5.00 E1000.00
+Recv:   M204 P1000.00 R1000.00 T500.00
+Recv:   M205 B20000.00 S0.00 T0.00 X10.00 Y10.00 Z0.30 E5.00
+Recv:   M206 X0.00 Y0.00 Z0.00
+Recv:   M420 S0 Z0.00
+Recv:   M145 S0 H200 B60 F0
+Recv:   M145 S1 H240 B110 F0
+Recv:   M301 P16.67 I1.12 D62.14
+Recv:   M304 P426.68 I78.92 D576.71
+Recv:   M851 Z-0.85
+Recv:   M906 X800 Y900 Z900
+Recv: 
+Recv:   M913 X80 Y80 Z6
+Recv: 
+Recv:   M569 S1 X Y Z
+Recv:   M900 K0.22
+Recv:   M603 L600.00 U650.00
+Recv: ok
