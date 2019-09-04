@@ -1,5 +1,7 @@
 -- Ultimaker 1
 
+version = 2
+
 function comment(text)
   output('; ' .. text)
 end

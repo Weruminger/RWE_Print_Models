@@ -1,3 +1,5 @@
+version = 2
+
 bed_size_x_mm = 235
 bed_size_y_mm = 225
 bed_size_z_mm = 205
@@ -6,7 +8,7 @@ nozzle_diameter_mm = 0.4
 
 extruder_count = 1
 
-priming_mm_per_sec = 20
+priming_mm_per_sec = 40
 
 z_layer_height_mm_min = 0.05
 z_layer_height_mm_max = nozzle_diameter_mm * 0.75

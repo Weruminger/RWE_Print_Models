@@ -1,5 +1,7 @@
 -- icedelta
 
+version = 2
+
 bed_origin_x = bed_size_x_mm/2
 bed_origin_y = bed_size_y_mm/2
 

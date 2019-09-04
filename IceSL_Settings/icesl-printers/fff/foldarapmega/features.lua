@@ -1,4 +1,5 @@
 -- Foldarap Mega 200x200x450
+version = 2
 
 bed_size_x_mm = 200
 bed_size_y_mm = 190

@@ -1,28 +1,20 @@
 -- Ultimaker 3
 -- Sylvain Lefebvre  2017-07-28
 
+version = 2
+
 function comment(text)
   output('; ' .. text)
-end
-
-function e_to_mm_cube(filament_diameter, e)
-  local r = filament_diameter / 2
-  return (math.pi * r^2 ) * e
-end
-
-function round(number, decimals)
-  local power = 10^decimals
-  return math.floor(number * power) / power
 end
 
 current_z = 0
 current_extruder = -1
 
 extruder_e = {}
+extruder_e_restart = {}
+
 extruder_e[0] = 0
 extruder_e[1] = 0
-
-extruder_e_restart = {}
 extruder_e_restart[0] = 0
 extruder_e_restart[1] = 0
 
@@ -52,101 +44,65 @@ function prep_extruder(extruder)
 end
 
 function header()
-  --------------------------------------------------
-  -- Material Guid management for custom settings
-  --------------------------------------------------
+  r0 = filament_diameter_mm[0] / 2
+  to_mm_cube_0 = 3.14159 * r0 * r0
+  r1 = filament_diameter_mm[1] / 2
+  to_mm_cube_1 = 3.14159 * r1 * r1
+
+  -- material guid management for custom settings
   if material_guid == nil then
     if extruder_temp_degree_c[0] <= 180 and extruder_temp_degree_c[0] >= 210 then 
-      material_guid = '506c9f0d-e3aa-4bd4-b2d2-23e2425b1aa9' -- PLA GUID
+      material_guid = '506c9f0d-e3aa-4bd4-b2d2-23e2425b1aa9'
     elseif extruder_temp_degree_c[0] <= 230 and extruder_temp_degree_c[0] >= 260 then
-      material_guid = '60636bb4-518f-42e7-8237-fe77b194ebe0' -- ABS GUID
+      material_guid = '60636bb4-518f-42e7-8237-fe77b194ebe0'
     else
-      material_guid = '506c9f0d-e3aa-4bd4-b2d2-23e2425b1aa9' -- PLA GUID
+      material_guid = '506c9f0d-e3aa-4bd4-b2d2-23e2425b1aa9'
     end
   end
 
-  --------------------------------------------------
-  -- Header Generation (commented output will be available in a future version of IceSL)
-  --------------------------------------------------
+  h = file('header.gcode')
 
-  --------------------------------------------------
-  -- Start of the header (printer and slicer informations)
-  --------------------------------------------------
-  output(';START_OF_HEADER')
-  output(';HEADER_VERSION:0.1')
-  output(';FLAVOR:Griffin')
-  output(';GENERATOR.NAME:IceSL')
-  output(';GENERATOR.VERSION:2.1')
-  output(';GENERATOR.BUILD_DATE:2017-07-28')
-  output(';GENERATOR.NAME:' .. slicer_name)
-  output(';GENERATOR.VERSION:' .. slicer_version)
-  output(';GENERATOR.BUILD_DATE:' .. slicer_build_date)
-  output(';TARGET_MACHINE.NAME:Ultimaker 3\n')
-
-  --------------------------------------------------
-  -- Extruder management (commented output will be available in future version of IceSL)
-  --------------------------------------------------
-  if filament_tot_length_mm[0] > 0 then 
-    output(';EXTRUDER_TRAIN.0.INITIAL_TEMPERATURE:' .. extruder_temp_degree_c[0])
-    output(';EXTRUDER_TRAIN.0.MATERIAL.VOLUME_USED:' .. e_to_mm_cube(filament_diameter_mm[0],filament_tot_length_mm[0]))
-    output(';EXTRUDER_TRAIN.0.MATERIAL.GUID:' .. material_guid)
-    output(';EXTRUDER_TRAIN.0.NOZZLE.DIAMETER:' .. round(nozzle_diameter_mm_0,2) .. '\n')
-    --output(';EXTRUDER_TRAIN.0.MATERIAL.GUID:' .. material_guid_0)
-    --output(';EXTRUDER_TRAIN.0.NOZZLE.DIAMETER:' .. round(nozzle_diameter_mm_0,2))
-    --output(';EXTRUDER_TRAIN.0.NOZZLE.NAME:' .. printcore_0)
+  if filament_tot_length_mm[0] > 0 then
+    h = h:gsub('<TOOLTEMP0>', extruder_temp_degree_c[0])
+  else
+    h = h:gsub('<TOOLTEMP0>', 0)
   end
 
-  if filament_tot_length_mm[1] > 0 then 
-    output(';EXTRUDER_TRAIN.1.INITIAL_TEMPERATURE:' .. extruder_temp_degree_c[1])
-    output(';EXTRUDER_TRAIN.1.MATERIAL.VOLUME_USED:' .. e_to_mm_cube(filament_diameter_mm[1],filament_tot_length_mm[1]))
-    output(';EXTRUDER_TRAIN.1.MATERIAL.GUID:' .. material_guid)
-    output(';EXTRUDER_TRAIN.1.NOZZLE.DIAMETER:' .. round(nozzle_diameter_mm_1,2) .. '\n')
-    --output(';EXTRUDER_TRAIN.1.MATERIAL.GUID:' .. material_guid_1)
-    --output(';EXTRUDER_TRAIN.1.NOZZLE.DIAMETER:' .. round(nozzle_diameter_mm_1,2))
-    --output(';EXTRUDER_TRAIN.1.NOZZLE.NAME:' .. printcore_1)
+  h = h:gsub('<TOOLVOLUME0>', filament_tot_length_mm[0]*to_mm_cube_0)
+  h = h:gsub('<TOOLMATERIAL0>', material_guid)
+  -- h = h:gsub('<TOOLNOZZLE0>', nozzle_diameter_mm_0)
+
+  if filament_tot_length_mm[1] > 0 then
+    h = h:gsub('<TOOLTEMP1>', extruder_temp_degree_c[1])
+  else
+    h = h:gsub('<TOOLTEMP1>', 0)
   end
 
-  --------------------------------------------------
-  -- Build plate management
-  --------------------------------------------------
-  output(';BUILD_PLATE.TYPE:glass')
-  output(';BUILD_PLATE.INITIAL_TEMPERATURE:' .. bed_temp_degree_c .. '\n')
+  h = h:gsub('<TOOLVOLUME1>', filament_tot_length_mm[1]*to_mm_cube_0)
+  h = h:gsub('<TOOLMATERIAL1>', material_guid)
+  -- h = h:gsub('<TOOLNOZZLE1>', nozzle_diameter_mm_0)
 
-  --------------------------------------------------
-  -- Printing time estimation
-  --------------------------------------------------
-  output(';PRINT.TIME:' .. time_sec .. '\n')
+  h = h:gsub('<HBPTEMP>', bed_temp_degree_c)
+  h = h:gsub('<ESTPTIME>', time_sec)
+  h = h:gsub('<XMIN>', 0)
+  h = h:gsub('<YMIN>', 0)
+  h = h:gsub('<ZMIN>', 0)
+  h = h:gsub('<XMAX>', f(min_corner_x+extent_x))
+  h = h:gsub('<YMAX>', f(min_corner_y+extent_y))
+  h = h:gsub('<ZMAX>', f(extent_z))
 
-  --------------------------------------------------
-  -- Limits of the print
-  --------------------------------------------------
-  output(';PRINT.SIZE.MIN.X:' .. 0)
-  output(';PRINT.SIZE.MIN.Y:' .. 0)
-  output(';PRINT.SIZE.MIN.Z:' .. 0)
-  output(';PRINT.SIZE.MAX.X:' .. f(min_corner_x+extent_x))
-  output(';PRINT.SIZE.MAX.Y:' .. f(min_corner_y+extent_y))
-  output(';PRINT.SIZE.MAX.Z:' .. f(extent_z) .. '\n')
-
-  --------------------------------------------------
-  -- End of the header
-  --------------------------------------------------
-  output(';END_OF_HEADER\n')
-
+  output(h)
 end
 
 function footer()
-  output('M204 S3000')
-  output('M205 X20')
-  output('M107')
-  output('M104 T0 S0')
-  output('M104 T1 S0')
+  output(file('footer.gcode'))
 end
 
 function retract(extruder,e)
   output(';retract')
   len   = filament_priming_mm[extruder]
   speed = priming_mm_per_sec * 60
-  output('G0 F' .. speed .. ' E' .. ff(e - len - extruder_e_restart[extruder]))
+  output('G0 F' .. speed .. ' E' .. f(e - len - extruder_e_restart[extruder]))
   extruder_e[extruder] = e - len
   return e - len
 end
@@ -155,7 +111,7 @@ function prime(extruder,e)
   output(';prime')
   len   = filament_priming_mm[extruder]
   speed = priming_mm_per_sec * 60
-  output('G0 F' .. speed .. ' E' .. ff(e + len - extruder_e_restart[extruder]))
+  output('G0 F' .. speed .. ' E' .. f(e + len - extruder_e_restart[extruder]))
   extruder_e[extruder] = e + len
   return e + len
 end

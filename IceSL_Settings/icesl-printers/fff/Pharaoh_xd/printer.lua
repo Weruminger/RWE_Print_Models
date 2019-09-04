@@ -1,5 +1,7 @@
 -- Pharaoh delta printer
 
+version = 2
+
 bed_origin_x = bed_size_x_mm/2
 bed_origin_y = bed_size_y_mm/2
 
@@ -36,7 +38,7 @@ function retract(extruder,e)
   len   = filament_priming_mm[extruder]
   speed = priming_mm_per_sec * 60;
   letter = 'E'
-  output('G1 F' .. speed .. ' ' .. letter .. ff(e - len - extruder_e_restart))
+  output('G1 F' .. speed .. ' ' .. letter .. f(e - len - extruder_e_restart))
   extruder_e = e - len
   return e - len
 end
@@ -45,7 +47,7 @@ function prime(extruder,e)
   len   = filament_priming_mm[extruder]
   speed = priming_mm_per_sec * 60;
   letter = 'E'
-  output('G1 F' .. speed .. ' ' .. letter .. ff(e + len - extruder_e_restart))
+  output('G1 F' .. speed .. ' ' .. letter .. f(e + len - extruder_e_restart))
   extruder_e = e + len
   return e + len
 end
@@ -66,13 +68,13 @@ end
 function move_xyze(x,y,z,e)
   extruder_e = e
   letter = 'E'
-  output('G1 X' .. f(x-bed_origin_x) .. ' Y' .. f(y-bed_origin_y) .. ' Z' .. f(z+z_offset) .. ' F' .. current_frate .. ' ' .. letter .. ff(e - extruder_e_restart))
+  output('G1 X' .. f(x-bed_origin_x) .. ' Y' .. f(y-bed_origin_y) .. ' Z' .. f(z+z_offset) .. ' F' .. current_frate .. ' ' .. letter .. f(e - extruder_e_restart))
 end
 
 function move_e(e)
   extruder_e = e
   letter = 'E'
-  output('G1 ' .. letter .. ff(e - extruder_e_restart))
+  output('G1 ' .. letter .. f(e - extruder_e_restart))
 end
 
 function set_feedrate(feedrate)
