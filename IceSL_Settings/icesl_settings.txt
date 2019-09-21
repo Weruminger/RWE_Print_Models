@@ -1,5 +1,5 @@
 selected_printer Ethrendil
-selected_profile 1
+selected_profile 2
 selected_material 1
 show_service_panel 1
 selected_language en
