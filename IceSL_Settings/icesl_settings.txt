@@ -1,5 +1,8 @@
-selected_printer Ethrendil
-selected_profile 2
-selected_material 1
+selected_printer Ethendil
+selected_profile 0
+selected_material 0
 show_service_panel 1
+selected_theme default
+save_after_service 0
+ui_font_size 15
 selected_language en
