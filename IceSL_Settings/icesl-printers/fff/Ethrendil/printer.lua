@@ -7,8 +7,22 @@ function comment(text)
   output('; ' .. text)
 end
 
-extruder_e = 0
-extruder_e_restart = 0
+current_z = 0
+current_extruder = -1
+
+extruder_e = {}
+extruder_e_restart = {}
+
+extruder_e[0] = 0
+extruder_e[1] = 0
+extruder_e_restart[0] = 0
+extruder_e_restart[1] = 0
+
+traveling = 0
+
+extruder_stored = {}
+extruder_stored[0] = false
+extruder_stored[1] = false
 
 function header()
   h = file('header.gcode')
@@ -46,6 +60,7 @@ current_extruder = 0
 current_frate = 0
 
 function select_extruder(extruder)
+
 end
 
 function swap_extruder(from,to,x,y,z)
