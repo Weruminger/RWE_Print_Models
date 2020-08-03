@@ -2652,7 +2652,7 @@
 <flow_multiplier_99 value="1" />
 <gen_cavity value="False" />
 <gen_shield value="False" />
-<gen_supports value="False" />
+<gen_supports value="True" />
 <gen_tower value="False" />
 <idle_extruder_temp_degree_c_0 value="100" />
 <idle_extruder_temp_degree_c_1 value="100" />
@@ -6164,6 +6164,6 @@
 <travel_straight value="False" />
 <use_different_thickness_first_layer value="False" />
 <xy_max_deviation_mm value="0.025" />
-<xy_mm_per_pixels value="0.05" />
+<xy_mm_per_pixels value="0.001" />
 <z_layer_height_first_layer_mm value="0.3" />
 <z_layer_height_mm value="0.3" />

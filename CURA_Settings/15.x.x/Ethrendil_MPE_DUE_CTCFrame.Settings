@@ -1,0 +1,97 @@
+Connecting to: /dev/ttyACM0
+Changing monitoring state from "Offline" to "Opening serial port"
+Connected to: Serial<id=0x6ad4cdb0, open=True>(port='/dev/ttyACM0', baudrate=115200, bytesize=8, parity='N', stopbits=1, timeout=10.0, xonxoff=False, rtscts=False, dsrdtr=False), starting monitor
+Changing monitoring state from "Opening serial port" to "Connecting"
+Send: N0 M110 N0*125
+Recv: start
+Recv: echo:PowerUp
+Send: N0 M110 N0*125
+Send: N0 M110 N0*125
+Recv: Marlin bugfix-2.0.x
+Recv: 
+Recv: echo: Last Updated: 2018-01-20 | Author: (weruminger)
+Recv: echo:Compiled: Jun  9 2019
+Recv: echo: Free Memory: 71676  PlannerBufferBytes: 13312
+Recv: echo:Magnetic Parking Extruder
+Recv: echo:L: Left parking  :0.00
+Recv: echo:R: Right parking :109.00
+Recv: echo:I: Grab Offset   :32.00
+Recv: echo:J: Normal speed  :4500
+Recv: echo:H: High speed    :9000
+Recv: echo:D: Distance trav.:10.00
+Recv: echo:C: Compenstion   :0.00
+Recv: ok
+Changing monitoring state from "Connecting" to "Operational"
+Recv: ok
+Recv: ok
+Send: N0 M110 N0*125
+Recv: ok
+Send: N1 M115*39
+Recv: FIRMWARE_NAME:Marlin bugfix-2.0.x (Github) SOURCE_CODE_URL:https://github.com/MarlinFirmware/Marlin PROTOCOL_VERSION:1.0 MACHINE_TYPE:Ethrendil 3D EXTRUDER_COUNT:2 UUID:821e09e2-ac62-4c0b-8588-90eb97b6cb43
+Recv: Cap:SERIAL_XON_XOFF:0
+Recv: Cap:BINARY_FILE_TRANSFER:0
+Recv: Cap:EEPROM:1
+Send: M876 P1
+Recv: Cap:VOLUMETRIC:1
+Recv: Cap:AUTOREPORT_TEMP:1
+Send: M420V1
+Recv: Cap:PROGRESS:0
+Recv: Cap:PRINT_JOB:1
+Recv: Cap:AUTOLEVEL:1
+Recv: Cap:Z_PROBE:1
+Recv: Cap:LEVELING_DATA:1
+Recv: Cap:BUILD_PERCENT:0
+Recv: Cap:SOFTWARE_POWER:0
+Recv: Cap:TOGGLE_LIGHTS:0
+Recv: Cap:CASE_LIGHT_BRIGHTNESS:0
+Recv: Cap:EMERGENCY_PARSER:0
+Recv: Cap:PROMPT_SUPPORT:0
+Recv: Cap:AUTOREPORT_SD_STATUS:0
+Recv: Cap:THERMAL_PROTECTION:1
+Recv: Cap:MOTION_MODES:0
+Recv: Cap:CHAMBER_TEMPERATURE:0
+Recv: echo:Unknown command: "M876 P1"
+Send: M851
+Send: M155 S2
+Recv: echo:Invalid mesh.
+Recv: echo:Bed Leveling OFF
+Recv: echo:Fade Height OFF
+Recv: ok
+Recv: echo:Probe Z Offset: -0.60
+Send: M117 0% L=-/-
+Recv: ok
+Send: M504
+Send: M501
+Recv: echo:EEPROM OK
+
+Send: M503
+Recv:   G21    ; Units in mm (mm)
+Recv:   M149 C ; Units in Celsius
+Recv: 
+Recv:   M200 D1.75
+Recv:   M200 T1 D1.75
+Recv:   M200 D0
+Recv:   M92 X161.20 Y161.20 Z3209.00
+Recv:   M92 T0 E3319.93
+Recv:   M92 T1 E3319.93
+Recv:   M203 X400.00 Y400.00 Z16.00
+Recv:   M203 T0 E45.00
+Recv:   M203 T1 E45.00
+Recv:   M201 X1500.00 Y1500.00 Z50.00
+Recv:   M201 T0 E8000.00
+Recv:   M201 T1 E8000.00
+Recv:   M204 P1000.00 R750.00 T1500.00
+Recv:   M205 B20000.00 S0.00 T0.00 X10.00 Y10.00 Z0.30 E5.00
+Recv:   M206 X-32.00 Y0.00 Z0.00
+Recv:   M218 T1 X-0.70 Y-0.10 Z0.000
+Recv:   M420 S0 Z0.00
+Recv:   M145 S0 H184 B60 F0
+Recv:   M145 S1 H240 B100 F0
+Recv:   M301 E0 P31.45 I3.19 D77.61
+Recv:   M301 E1 P31.45 I3.19 D77.61
+Recv:   M304 P453.27 I38.16 D1346.04
+Recv:   M207 S5.00 W35.00 F2700.00 Z0.60
+Recv:   M208 S0.00 W0.00 F1800.00
+Recv:   M209 S0
+Recv:   M851 Z-0.60
+Recv:   M217 S3.00 P3600.00 R3600.00 Z3.00
