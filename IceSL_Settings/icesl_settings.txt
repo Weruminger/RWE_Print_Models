@@ -6,4 +6,3 @@ selected_theme dark
 save_after_service 0
 ui_font_size 15
 selected_language en
-selected_language en
