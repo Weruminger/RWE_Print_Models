@@ -11,9 +11,9 @@ extruder_offset_y[0] =  0.0
 extruder_offset_x[1] =  0.0
 extruder_offset_y[1] =  0.0
 
-extruder_swap_at_location = true
-extruder_swap_location_x_mm = bed_size_x_mm / 2 - 15
-extruder_swap_location_y_mm = bed_size_y_mm / 2 - 15
+tower_at_location = true
+tower_location_x_mm = bed_size_x_mm / 2 - 15
+tower_location_y_mm = bed_size_y_mm / 2 - 15
 
 gen_tower = true
 tower_side_x_mm = 10.0
@@ -45,7 +45,7 @@ first_layer_print_speed_mm_per_sec_max = 80
 
 fan_speed_multiplier = 1.0 -- between 0 and 1
 
-for i=0,63,1 do
+for i = 0, max_number_extruders, 1 do
   _G['filament_diameter_mm_'..i] = 1.75
   _G['filament_priming_mm_'..i] = 4.0
   _G['extruder_temp_degree_c_' ..i] = 235

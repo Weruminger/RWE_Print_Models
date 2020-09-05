@@ -1,8 +1,6 @@
 -- Raise3D N2 plus
 -- 2018-01-24
 
-version = 2
-
 function comment(text)
   output('; ' .. text)
 end
@@ -140,7 +138,7 @@ end
 function retract(extruder,e)
   output(';retract')
   len   = filament_priming_mm[extruder]
-  speed = priming_mm_per_sec * 60
+  speed = priming_mm_per_sec[extruder] * 60
   output('G0 F' .. speed .. ' E' .. ff(e - len - extruder_e_restart[extruder]))
   extruder_e[extruder] = e - len
   return e - len
@@ -149,7 +147,7 @@ end
 function prime(extruder,e)
   output(';prime')
   len   = filament_priming_mm[extruder]
-  speed = priming_mm_per_sec * 60
+  speed = priming_mm_per_sec[extruder] * 60
   output('G0 F' .. speed .. ' E' .. ff(e + len - extruder_e_restart[extruder]))
   extruder_e[extruder] = e + len
   return e + len
@@ -246,7 +244,7 @@ end
 function move_e(e)
   extruder_e[current_extruder] = e
   letter = 'E'
-  output('G0 ' .. letter .. f(e-extruder_e_restart[current_extruder]))
+  output('G0 ' .. letter .. ff(e-extruder_e_restart[current_extruder]))
 end
 
 function set_feedrate(feedrate)

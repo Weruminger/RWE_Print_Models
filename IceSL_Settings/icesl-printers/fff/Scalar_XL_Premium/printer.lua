@@ -89,7 +89,7 @@ end
 
 function retract(extruder,e) 
   len   = filament_priming_mm[extruder]
-  speed = priming_mm_per_sec * 60;
+  speed = priming_mm_per_sec[extruder] * 60;
   letter = 'E'
   output ('G1 F' .. speed .. ' ' .. letter .. ff(e - len - extruder_e_restart))
   if enable_vertical_lift == true then
@@ -105,7 +105,7 @@ end
 
 function prime(extruder,e)
   len   = filament_priming_mm[extruder]
-  speed = priming_mm_per_sec * 60;
+  speed = priming_mm_per_sec[extruder] * 60;
   letter = 'E'
   if enable_vertical_lift == true then
 	  output ('G91  ; use relative coordinates')
@@ -163,6 +163,10 @@ end
 
 function set_extruder_temperature(extruder,temperature)
   output('M104 S' .. temperature .. ' T' .. extruder)
+end
+
+function set_and_wait_extruder_temperature(extruder,temperature)
+  output('M109 S' .. temperature .. ' T' .. extruder)
 end
 
 function set_fan_speed(speed)

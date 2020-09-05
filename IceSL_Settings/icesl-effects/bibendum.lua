@@ -3,8 +3,8 @@ name_es = "Bibendum"
 name_fr = "Bibendum"
 name_ch = "Bibendum"
 description_en = "Bibendum effect"
-description_es = "Bibendum effect"
-description_fr = "Bibendum effect"
+description_es = "Efecto Bibendum"
+description_fr = "Effet Bibendum"
 description_ch = "Bibendum effect"
 
 enable_variable_cache = true
@@ -18,7 +18,7 @@ function effect(mdl)
   end
 
   local bx = bbox(mdl)
-  local bib = implicit(bx:min_corner(), bx:max_corner(), [[
+  local bib = implicit_distance_field(bx:min_corner(), bx:max_corner(), [[
 uniform float          scl;
 uniform float          amp;
 uniform sampler3D dfield;

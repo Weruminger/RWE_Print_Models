@@ -192,13 +192,13 @@ function Qrestore(speed,len)
 end
 
 function retract(tool,e)
-  speed = priming_mm_per_sec * 60
+  speed = priming_mm_per_sec[extruder] * 60
   len = filament_priming_mm[current_tool]
   return Qretract(speed,len)
 end
 
 function prime(tool,e)
-  speed = priming_mm_per_sec * 60
+  speed = priming_mm_per_sec[extruder] * 60
   len   = filament_priming_mm[current_tool]
   return Qrestore(speed,len)
 end
@@ -253,6 +253,10 @@ end
 
 function set_extruder_temperature(extruder,temperature)
   output('M104 S' .. temperature .. ' T' .. extruder)
+end
+
+function set_and_wait_extruder_temperature(extruder,temperature)
+  output('M109 S' .. temperature .. ' T' .. extruder)
 end
 
 current_fan_speed = -1

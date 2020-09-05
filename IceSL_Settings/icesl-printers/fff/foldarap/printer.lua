@@ -1,7 +1,5 @@
 -- Flodarap
 
-version = 2
-
 function comment(text)
   output('; ' .. text)
 end
@@ -33,7 +31,7 @@ end
 
 function retract(extruder,e)
   len   = filament_priming_mm[extruder]
-  speed = priming_mm_per_sec * 60;
+  speed = priming_mm_per_sec[extruder] * 60;
   letter = 'E'
   output('G1 F' .. f(speed) .. ' ' .. letter .. ff(e - len - extruder_e_restart))
   extruder_e = e - len
@@ -42,7 +40,7 @@ end
 
 function prime(extruder,e)
   len   = filament_priming_mm[extruder]
-  speed = priming_mm_per_sec * 60;
+  speed = priming_mm_per_sec[extruder] * 60;
   letter = 'E'
   output('G1 F' .. f(speed) .. ' ' .. letter .. ff(e + len - extruder_e_restart))
   extruder_e = e + len
@@ -90,6 +88,10 @@ end
 
 function set_extruder_temperature(extruder,temperature)
   output('M104 S' .. temperature .. ' T' .. extruder)
+end
+
+function set_and_wait_extruder_temperature(extruder,temperature)
+  output('M109 S' .. temperature .. ' T' .. extruder)
 end
 
 current_fan_speed = -1

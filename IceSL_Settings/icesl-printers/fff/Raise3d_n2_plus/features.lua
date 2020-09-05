@@ -1,5 +1,3 @@
-version = 2
-
 bed_size_x_mm = 305
 bed_size_y_mm = 305
 bed_size_z_mm = 610
@@ -7,9 +5,9 @@ bed_size_z_mm = 610
 nozzle_diameter_mm = 0.4
 
 extruder_count = 2
-extruder_swap_at_location = true
-extruder_swap_location_x_mm = bed_size_x_mm
-extruder_swap_location_y_mm = bed_size_y_mm
+tower_at_location = true
+tower_location_x_mm = bed_size_x_mm
+tower_location_y_mm = bed_size_y_mm
 
 z_offset   = 0.0
 
@@ -32,7 +30,7 @@ first_layer_print_speed_mm_per_sec = 10
 first_layer_print_speed_mm_per_sec_min = 1
 first_layer_print_speed_mm_per_sec_max = 80
 
-for i=0,63,1 do
+for i = 0, max_number_extruders, 1 do
   _G['filament_diameter_mm_'..i] = 1.75
   _G['filament_priming_mm_'..i] = 4.0
   _G['extruder_temp_degree_c_' ..i] = 210

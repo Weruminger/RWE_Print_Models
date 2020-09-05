@@ -3,4 +3,3 @@ selected_profile 0
 selected_material 0
 show_service_panel 1
 selected_language en
-selected_language en

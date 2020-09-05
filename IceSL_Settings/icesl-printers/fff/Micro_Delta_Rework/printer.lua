@@ -27,7 +27,7 @@ end
 function retract(extruder,e)
   output(';retract')
   len   = filament_priming_mm[extruder]
-  speed = priming_mm_per_sec * 60
+  speed = priming_mm_per_sec[extruder] * 60
   output('G0 F' .. speed .. ' E' .. ff(e - len - extruder_e_restart))
   extruder_e = e - len
   return e - len
@@ -36,7 +36,7 @@ end
 function prime(extruder,e)
   output(';prime')
   len   = filament_priming_mm[extruder]
-  speed = priming_mm_per_sec * 60
+  speed = priming_mm_per_sec[extruder] * 60
   output('G0 F' .. speed .. ' E' .. ff(e + len - extruder_e_restart))
   extruder_e = e + len
   return e + len
@@ -101,6 +101,10 @@ end
 
 function set_extruder_temperature(extruder,temperature)
   output('M104 S' .. temperature)
+end
+
+function set_and_wait_extruder_temperature(extruder,temperature)
+  output('M109 S' .. temperature)
 end
 
 current_fan_speed = -1
